@@ -87,8 +87,8 @@ func (c *BeaconsMemoryClientV1) GetBeacons(ctx context.Context,
 	if (int64)(len(beacons)) >= take {
 		beacons = beacons[:take]
 	}
-	page = cdata.NewDataPage[data1.BeaconV1](beacons, total)
-	return page, nil
+
+	return cdata.NewDataPage(beacons, total), nil
 }
 
 func (c *BeaconsMemoryClientV1) GetBeaconById(ctx context.Context,
